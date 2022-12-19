@@ -13,13 +13,4 @@ function onPlay(time) {
   );
 }
 
-const savedTime = localStorage.getItem('videoplayer-current-time');
-// Нижче код я трошки не зрозумів. Коли гуглив цей метод (setCurrentTime), стикнувся з цим.
-// Чому б просто не записати без if? Ось так: 
-// player.setCurrentTime(localStorage.getItem('videoplayer-current-time'));
-
-// Як я зрозумів це для того, щоб час не зберігався у локальне сховище, якщо відео не програвалося ще. Чи це так?
-// Поясніть будь ласка)))
-if (savedTime) {
-  player.setCurrentTime(savedTime);
-}
+player.setCurrentTime(localStorage.getItem('videoplayer-current-time') || 0)
