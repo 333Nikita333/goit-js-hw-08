@@ -43,6 +43,9 @@ function recordingData() {
 }
 function onSubmitForm(evt) {
   evt.preventDefault();
+  if (!evt.target.email.value || !evt.target.message.value) {
+    return;
+  }
   console.log(userForm);
   evt.target.reset();
   localStorage.removeItem(LOCALSTORAGE_KEY);
