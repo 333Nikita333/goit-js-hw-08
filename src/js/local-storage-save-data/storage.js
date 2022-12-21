@@ -4,7 +4,7 @@ export const saveData = (key, value) => {
     const savedStringifyValue = JSON.stringify(value);
     localStorage.setItem(key, savedStringifyValue);
   } catch (error) {
-    console.error(error.message);
+    console.error("Save data failed: ", error.message);
   }
 };
 
@@ -13,7 +13,7 @@ export const loadData = key => {
     const loadedStringifyValue = localStorage.getItem(key);
     return loadedStringifyValue === null ? undefined : JSON.parse(loadedStringifyValue);
   } catch (error) {
-    console.error("Load data failed", error.message);
+    console.error("Load data failed: ", error.message);
   }
 };
 
