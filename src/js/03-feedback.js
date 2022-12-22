@@ -4,8 +4,7 @@ import {
   loadData,
   removeData,
 } from './local-storage-save-data/storage.js';
-
-const throttle = require('lodash.throttle');
+import throttle from 'lodash/throttle';
 const refs = {
   formEl: document.querySelector('.feedback-form'),
   inputEl: document.querySelector('.feedback-form input'),
